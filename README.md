@@ -1,6 +1,15 @@
 # my-Latex-notes
 > blockquote在论文中用到latex和自学latex中总结的笔记
 
+### 3.在写.cls文件时，用\usepackage和\reusepackage的区别?
+在编写 `.cls` 文件时，`\usepackage` 和 `\RequirePackage` 用于加载宏包，而 `\reusepackage` 是一个错误的命令，正确的应该是 `\RequirePackage`。下面是它们的区别：
+
+1. **\usepackage**: 这个命令在 `.tex` 文件中使用，用于加载宏包以扩展 LaTeX 的功能。它在 `.cls` 文件中不应该使用，因为 `.cls` 文件本身就是用于定义文档类的，而不是用于加载宏包的。
+
+2. **\RequirePackage**: 这个命令用于 `.cls` 文件中，它和 `\usepackage` 功能相同，都是用于加载宏包。但是 `\RequirePackage` 更适合在 `.cls` 文件中使用，因为它是专门为文档类设计的命令。在 `.cls` 文件中，它可以确保所需的宏包在加载时就已经加载完成，以保证文档类的正确运行。
+
+所以，在编写 `.cls` 文件时，应该使用 `\RequirePackage` 命令而不是 `\usepackage`。
+
 ### 2.`LaTeX2e` 和 `xeLaTeX` 作比喻
 
 想象一下，你在开车前往某个目的地。这里，你的目的地相当于你想要生成的最终文档（比如PDF文件），而开车的过程就类似于编译LaTeX文档的过程。
